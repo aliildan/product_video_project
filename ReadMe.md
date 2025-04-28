@@ -13,6 +13,7 @@ The goal of this project is to practice working with:
 
 It is **not** a full production tool — it is designed for **educational purposes**.
 
+> Note: This project requires Python 3.11 to run properly.
 ---
 ## Future Improvements
 
@@ -93,6 +94,47 @@ python3 create_video.py
 
 ---
 
+## Troubleshooting
+
+If you experience issues during setup or running the script, check the following:
+
+- **Check your Python version:**
+
+```bash
+python --version
+```
+Make sure it shows **Python 3.11.x**.
+
+- **Make sure you are using the virtual environment:**
+
+```bash
+which python
+which pip
+```
+They should point to the `/your_project_path/testenv/bin/` folder.
+
+- **If you installed packages globally instead of inside the virtual environment:**
+  
+You might need to reinstall inside the virtual environment:
+
+```bash
+pip install -r requirements.txt
+```
+
+- **If a package seems installed but you still get `ModuleNotFoundError`:**
+
+Recreate the environment:
+
+```bash
+rm -rf testenv
+python3 -m venv testenv
+source testenv/bin/activate
+pip install -r requirements.txt
+```
+
+This will reset the environment cleanly.
+
+---
 ## License
 
 This project is free for personal learning and experimentation.
